@@ -15,10 +15,10 @@ CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 #--------------Name-------------------------#
 NAME = templator
-
+BIN_PATH = /nfs/zfs-student-3/users/2014/achazal/.brew/bin/
 #--------------Sources----------------------#
 SRCS =	templator.cpp	\
-		generator.cpp	\
+		generator.cpp
 
 INC = -I./
 
@@ -30,6 +30,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(INC) $(OBJS) -o $(NAME)
+	cp $(NAME) $(BIN_PATH)
 
 %.o: %.cpp
 	$(CC) $(CCFLAGS) -c  $(INC) $< -o $@
